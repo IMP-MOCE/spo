@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Локальный WebGPU Чат-бот</title>
+    <title>AI Трекер: Разбор экзамена</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
-    <div class="chat-container">
+    <div class="app-container">
         <header>
-            <h2>🤖 Local Llama 1B</h2>
-            <span id="status-badge" class="badge loading">Загрузка модели...</span>
+            <h2>📚 AI Study Planner</h2>
+            <span id="status-badge" class="badge loading">Загрузка ИИ...</span>
         </header>
 
-        <main id="chat-box">
-            <div class="message system">
-                Привет! Я работаю полностью на твоем устройстве через WebGPU. Данные никуда не отправляются.
+        <section class="control-panel">
+            <div class="input-group">
+                <label>1. Загрузите демо-билет (PDF)</label>
+                <input type="file" id="pdf-upload" accept="application/pdf" disabled>
             </div>
-        </main>
+            <div class="input-group">
+                <label>2. Время на подготовку (часов)</label>
+                <input type="number" id="total-hours" value="12" min="1" max="100" disabled>
+            </div>
+            <button id="generate-btn" disabled>Сгенерировать план</button>
+        </section>
 
-        <div id="loading-container">
-            <p id="loading-text">Инициализация WebGPU...</p>
-            <div class="progress-bar">
-                <div id="progress-fill"></div>
-            </div>
+        <div id="progress-container">
+            <p id="progress-text">Инициализация WebGPU (~2 ГБ)...</p>
+            <div class="progress-bar"><div id="progress-fill"></div></div>
         </div>
 
-        <footer>
-            <input type="text" id="user-input" placeholder="Напиши сообщение..." disabled>
-            <button id="send-btn" disabled>Отправить</button>
-        </footer>
+        <main id="cards-grid" class="hidden"></main>
     </div>
 
     <script type="module" src="app.js"></script>
