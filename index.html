@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Локальный WebGPU Чат-бот</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <h2>🤖 Local Llama 1B</h2>
+            <span id="status-badge" class="badge loading">Загрузка модели...</span>
+        </header>
+
+        <main id="chat-box">
+            <div class="message system">
+                Привет! Я работаю полностью на твоем устройстве через WebGPU. Данные никуда не отправляются.
+            </div>
+        </main>
+
+        <div id="loading-container">
+            <p id="loading-text">Инициализация WebGPU...</p>
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </div>
+
+        <footer>
+            <input type="text" id="user-input" placeholder="Напиши сообщение..." disabled>
+            <button id="send-btn" disabled>Отправить</button>
+        </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

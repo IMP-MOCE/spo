@@ -1,0 +1,31 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+body { background-color: #121212; color: #ffffff; display: flex; justify-content: center; height: 100vh; }
+
+.chat-container { width: 100%; max-width: 600px; display: flex; flex-direction: column; background: #1e1e1e; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+
+header { padding: 15px 20px; background: #252526; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
+header h2 { font-size: 1.2rem; margin: 0; }
+
+.badge { padding: 5px 10px; border-radius: 12px; font-size: 0.8rem; }
+.badge.loading { background: #b8860b; color: #fff; }
+.badge.ready { background: #2e8b57; color: #fff; }
+
+#chat-box { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+
+.message { max-width: 80%; padding: 12px 16px; border-radius: 12px; line-height: 1.4; word-wrap: break-word; }
+.message.system { align-self: center; background: #333; color: #aaa; font-size: 0.9rem; max-width: 90%; text-align: center; }
+.message.user { align-self: flex-end; background: #007acc; color: white; border-bottom-right-radius: 2px; }
+.message.bot { align-self: flex-start; background: #3c3c3c; color: #e0e0e0; border-bottom-left-radius: 2px; }
+
+#loading-container { padding: 15px 20px; background: #252526; border-top: 1px solid #333; }
+#loading-text { font-size: 0.9rem; margin-bottom: 8px; color: #ccc; }
+.progress-bar { width: 100%; height: 8px; background: #444; border-radius: 4px; overflow: hidden; }
+#progress-fill { width: 0%; height: 100%; background: #007acc; transition: width 0.2s; }
+
+footer { padding: 15px 20px; background: #252526; display: flex; gap: 10px; border-top: 1px solid #333; }
+input { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #444; background: #121212; color: white; font-size: 1rem; outline: none; }
+input:focus { border-color: #007acc; }
+input:disabled { opacity: 0.5; }
+button { padding: 12px 20px; border-radius: 8px; border: none; background: #007acc; color: white; font-size: 1rem; cursor: pointer; font-weight: bold; }
+button:disabled { background: #444; color: #888; cursor: not-allowed; }
+button:hover:not(:disabled) { background: #005f9e; }
