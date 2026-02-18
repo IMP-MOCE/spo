@@ -169,8 +169,8 @@ async function askModel(messages, enableThinking = ENABLE_THINKING) {
         const reply = await engine.chat.completions.create({
             messages,
             temperature: 0.1,
-            max_tokens: 2048,
-            extra_body: enableThinking ? { enable_thinking: true } : undefined
+            max_tokens: 4096,
+            extra_body: enableThinking ? { enable_thinking: false } : undefined
         });
 
         console.log("📥 Получен ответ от модели");
